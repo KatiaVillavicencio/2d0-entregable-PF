@@ -1,2 +1,2 @@
 # 2d0-entregable-PF
-falta pushear managers y routers
+falta terminar carts.router.js y hacer pruebas
