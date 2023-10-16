@@ -21,10 +21,12 @@ routerP.get('/', async (req, res) => {
           page: Number(page) || 1,
           limit: Number(limit) || 10,
           sort: { price: Number(sort) }
+
       };
+  //desc -1 / asc 1
 
       if (!(options.sort.price === -1 || options.sort.price === 1)) {
-          delete options.sort
+           options.sort = {}
       }
 
 
