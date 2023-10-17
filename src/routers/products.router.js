@@ -23,7 +23,8 @@ routerP.get('/', async (req, res) => {
           sort: { price: Number(sort) }
 
       };
-  //desc -1 / asc 1
+
+  //desc --> -1 / asc --> 1
 
       if (!(options.sort.price === -1 || options.sort.price === 1)) {
            options.sort = {}
@@ -40,20 +41,7 @@ routerP.get('/', async (req, res) => {
               nextLink = products.hasNextPage ? req.originalUrl.replace(`page=${products.page}`, `page=${products.nextPage}`) : null;
               return { prevLink, nextLink };
           }
-          if (!req.originalUrl.includes('?')) {
-                // Si la URL original NO contiene : '?', entonces:
-
-              prevLink = products.hasPrevPage ? req.originalUrl.concat(`?page=${products.prevPage}`) : null;
-              nextLink = products.hasNextPage ? req.originalUrl.concat(`?page=${products.nextPage}`) : null;
-              return { prevLink, nextLink };
-          }
-            // Si la URL original contiene: '?' (otros parámetros), entonces:
-
-          prevLink = products.hasPrevPage ? req.originalUrl.concat(`&page=${products.prevPage}`) : null;
-          nextLink = products.hasNextPage ? req.originalUrl.concat(`&page=${products.nextPage}`) : null;
-          console.log(prevLink)
-          console.log(nextLink)
-
+      
           return { prevLink, nextLink };
 
       }
