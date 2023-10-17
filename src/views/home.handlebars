@@ -1,29 +1,37 @@
 
-{{#each listaproductos}}
-<article class="container">
-      <div class="card">
-        <div class="imgBx">
-          <img src="{{thumbnail}}" width="150" />
-        </div>
+<div id="contenedor">
+  <h1>Tienda Virtual</h1> 
+     {{#each listadeproductos}}
+    <div class="card">
+        <div class="basicInfo">
+            <div class="title">
 
-        <div >
-          <h2>{{title}}</h2>
-          <div>
-            <h3>{{description}}</h3>
-           
+                <img src="imagen"{{thumbnail}}>
+                <div class="name">Titulo: {{title}}</div>
+                <div class="info">Descripción:  {{description}}</div>
+                <div class="category"> categoria:{{category}}</div>
+                 <div class="item">
+                   <div class="price">Precio: S/.{{price}}</div>
+                    </div>
 
-          </div>
-          <a href="#">comprar</a>
-        </div>
-      </div>
-      
-    </article>
-{{/each}}
+                    
+       
+    </div>
+       {{/each}}
+   </div>
+
+      <a href="/chat"><h1>chat</h1></a>
+      <a href="api/carts"><h1>Carrito</h1></a>
+ 
 
 
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/index.js"></script>
+
+
+
+
+
+   
 
 
 
